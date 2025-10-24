@@ -177,6 +177,16 @@
             "request": "launch",
             "mainClass": "edu.fra.uas.BeanExampleApplication",
             "projectName": "BeanExampleExtendedTesting"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-HelloApplication<hello>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "edu.fra.uas.hello.HelloApplication",
+            "projectName": "hello",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
