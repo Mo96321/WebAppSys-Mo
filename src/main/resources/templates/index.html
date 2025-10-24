@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot + Thymeleaf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        p {
+            color: #333;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Willkommen im Projekt von Mohamad</h1>
+    <p th:text="${message}">Standardnachricht</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title th:text="${title}">Hello</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <span class="badge">👋 <span th:text="${title}">Hallo</span></span>
+      <h1 th:text="${title}">Hallo von Thymeleaf!</h1>
+      <p class="lead" th:text="${message}">
+        Dies ist eine zweite Seite mit Daten aus dem Controller.
+      </p>
+
+      <div class="hr"></div>
+
+      <nav class="nav">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/hello}">/hello</a>
+      </nav>
+
+      <p class="footer">
+        Powered by Spring Boot · Thymeleaf · WSL
+      </p>
+    </div>
+  </div>
+</body>
+</html>
