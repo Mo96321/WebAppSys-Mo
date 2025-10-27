@@ -1,0 +1,30 @@
+package edu.fra.uas.controller;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+@WebMvcTest(HomeController.class)
+class HomeControllerTest {
+
+    @Autowired
+    MockMvc mvc;
+
+    @Test
+    void index_returns_index_view() throws Exception {
+        mvc.perform(get("/"))
+           .andExpect(status().isOk())
+           .andExpect(view().name("index"));
+    }
+
+    @Test
+    void hello_returns_hello_view() throws Exception {
+        mvc.perform(get("/hello"))
+           .andExpect(status().isOk())
+           .andExpect(view().name("hello"));
+    }
+}
