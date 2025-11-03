@@ -1,30 +1,20 @@
 package edu.fra.uas.controller;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.web.servlet.MockMvc;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+@Controller
+public class HomeController {
 
-@WebMvcTest(HomeController.class)
-class HomeControllerTest {
+    private static final Logger log = LoggerFactory.getLogger(HomeController.class);
 
-    @Autowired
-    MockMvc mvc;
-
-    @Test
-    void index_returns_index_view() throws Exception {
-        mvc.perform(get("/"))
-           .andExpect(status().isOk())
-           .andExpect(view().name("index"));
-    }
-
-    @Test
-    void hello_returns_hello_view() throws Exception {
-        mvc.perform(get("/hello"))
-           .andExpect(status().isOk())
-           .andExpect(view().name("hello"));
+    @GetMapping("/")
+    public String index(Model model) {
+        log.info("GET /  -> render index.html");
+        model.addAttribute("message", "Willkommen auf der Startseite.");
+        return "index";
     }
 }

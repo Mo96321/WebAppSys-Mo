@@ -1,11 +1,16 @@
 package edu.fra.uas.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
-@SpringBootApplication
-public class HelloApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(HelloApplication.class, args);
+@Service
+public class MessageService {
+
+    private static final Logger log = LoggerFactory.getLogger(MessageService.class);
+
+    public String getMessage() {
+        log.debug("build message in MessageService");
+        return "Nachricht aus MessageService";
     }
 }
